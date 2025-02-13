@@ -1,4 +1,5 @@
 # NSS Fork for IPQ807x
+| Add aliyun ap8220
 | Branch                                                                                  | mac80211 Version | Notes                                                                 |
 |-----------------------------------------------------------------------------------------|------------------|----------------------------------------------------------------------|
 | [main-nss](https://github.com/qosmio/openwrt-ipq/tree/main-nss)                 |6.12.6|Current with upstream `main` (unstable)|
