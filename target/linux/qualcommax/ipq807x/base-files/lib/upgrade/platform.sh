@@ -166,6 +166,11 @@ platform_pre_upgrade() {
 
 platform_do_upgrade() {
 	case "$(board_name)" in
+ 	cpe,s10|\
+ 	aliyun,ap8220)
+		CI_UBIPART="rootfs"
+		nand_do_upgrade "$1"
+		;;
 	arcadyan,aw1000|\
 	cmcc,rm2-6|\
 	compex,wpq873|\
