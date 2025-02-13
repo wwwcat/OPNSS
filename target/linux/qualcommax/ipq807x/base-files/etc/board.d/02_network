@@ -17,7 +17,6 @@ ipq807x_setup_interfaces()
 	cpe,s10)
 		ucidef_set_interfaces_lan_wan "eth0  eth1" "eth2"
 		;;
-
 	asus,rt-ax89x)
 		ucidef_set_interfaces_lan_wan "10g-sfp 10g-copper lan1 lan2 lan3 lan4 lan5 lan6 lan7 lan8" "wan"
 		;;
