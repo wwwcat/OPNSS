@@ -1,5 +1,28 @@
 # NSS Fork for IPQ807x
 | Add aliyun ap8220
+下载源代码，更新 feeds 并选择配置
+  git clone https://github.com/wwwcat/OPNSS.git
+  cd OPNSS
+  ./scripts/feeds update -a && ./scripts/feeds install -a
+make menuconfig
+下载 dl 库，编译固件 （-j 后面是线程数，为便于排除错误推荐用单线程）
+
+make download -j$(nproc)
+make -j1 V=s
+二次编译：
+
+cd openwrt-6.x
+git fetch && git reset --hard origin/kernel-6.12
+./scripts/feeds update -a && ./scripts/feeds install -a
+make menuconfig
+make V=s -j$(nproc)
+如果需要重新配置：
+
+rm -rf .config
+make menuconfig
+make V=s -j$(nproc)
+编译完成后输出路径：bin/targets
+
 | Branch                                                                                  | mac80211 Version | Notes                                                                 |
 |-----------------------------------------------------------------------------------------|------------------|----------------------------------------------------------------------|
 | [main-nss](https://github.com/qosmio/openwrt-ipq/tree/main-nss)                 |6.12.6|Current with upstream `main` (unstable)|
